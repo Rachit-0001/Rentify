@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Properties</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1>All Properties</h1>
+
+<a href="/property/add">
+    Add Property
+</a>
+
+<hr>
+
+<table border="1">
+
+    <tr>
+        <th>Property No</th>
+        <th>Type</th>
+        <th>Rent</th>
+        <th>Water</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    <% properties.forEach(property => { %>
+
+        <tr>
+
+            <td><%= property.propertyNumber %></td>
+
+            <td><%= property.type %></td>
+
+            <td><%= property.rent %></td>
+
+            <td><%= property.defaultWaterCharge %></td>
+
+            <td><%= property.status %></td>
+
+            <td>
+                <a href="/property/delete/<%= property._id %>">
+                    Delete
+                </a>
+            </td>
+
+        </tr>
+
+    <% }) %>
+
+
+
+</table>
+
+
+</body>
+</html>

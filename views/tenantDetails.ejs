@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tenant Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1>Tenant Details</h1>
+
+<hr>
+
+<h3>Name: <%= tenant.name %></h3>
+
+<h3>Phone: <%= tenant.phone %></h3>
+
+<h3>
+    Property:
+    <%= tenant.property.propertyNumber %>
+</h3>
+
+<h3>
+    Type:
+    <%= tenant.property.type %>
+</h3>
+
+<h3>
+    Pending Due:
+    ₹<%= pendingDue %>
+</h3>
+
+<hr>
+
+<h2>Bills</h2>
+
+<table border="1">
+
+<tr>
+    <th>Month</th>
+    <th>Total Bill</th>
+    <th>Balance</th>
+    <th>Status</th>
+</tr>
+
+<% bills.forEach(bill => { %>
+
+<tr>
+
+    <td>
+        <%= bill.month %> /
+        <%= bill.year %>
+    </td>
+
+    <td>
+        ₹<%= bill.totalBill %>
+    </td>
+
+    <td>
+        ₹<%= bill.balance %>
+    </td>
+
+    <td>
+        <%= bill.status %>
+    </td>
+
+</tr>
+
+<% }) %>
+
+</table>
+
+<hr>
+
+<h2>Payments</h2>
+
+<table border="1">
+
+<tr>
+    <th>Receipt No</th>
+    <th>Amount</th>
+    <th>Mode</th>
+    <th>Date</th>
+</tr>
+
+<% payments.forEach(payment => { %>
+
+<tr>
+
+    <td>
+        <%= payment.receiptNumber %>
+    </td>
+
+    <td>
+        ₹<%= payment.amount %>
+    </td>
+
+    <td>
+        <%= payment.paymentMode %>
+    </td>
+
+    <td>
+        <%= new Date(payment.paymentDate)
+            .toLocaleDateString()
+        %>
+    </td>
+
+</tr>
+
+<% }) %>
+
+</table>
+
+<br>
+
+<a href="/tenants">
+    Back To Tenants
+</a>
+
+</body>
+</html>

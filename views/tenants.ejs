@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tenants</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1>All Tenants</h1>
+
+<a href="/tenant/add">
+
+    Add Tenant
+
+</a>
+
+<hr>
+
+<table border="1">
+
+<tr>
+
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Details</th>
+
+</tr>
+
+<% tenants.forEach(tenant => { %>
+
+<tr>
+
+    <td><%= tenant.name %></td>
+
+    <td><%= tenant.phone %></td>
+
+    <td>
+        <%= tenant.property.propertyNumber %>
+    </td>
+
+    <td>
+        <%= tenant.property.type %>
+    </td>
+
+    <td>
+        <a href="/tenant/<%= tenant._id %>">
+            View
+        </a>
+    </td>
+
+</tr>
+
+<% }) %>
+
+</table>
+
+</body>
+</html>

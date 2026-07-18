@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Tenant</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1>Add Tenant</h1>
+
+<form action="/tenant/add" method="POST">
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Tenant Name"
+        required
+    >
+
+    <br><br>
+
+    <input
+        type="text"
+        name="phone"
+        placeholder="Phone Number"
+        required
+    >
+
+    <br><br>
+
+    <select name="property">
+
+        <% properties.forEach(property => { %>
+
+            <option value="<%= property._id %>">
+
+                <%= property.propertyNumber %>
+                -
+                <%= property.type %>
+
+            </option>
+
+        <% }) %>
+
+    </select>
+
+    <br><br>
+
+    <button type="submit">
+
+        Add Tenant
+
+    </button>
+
+</form>
+
+</body>
+</html>

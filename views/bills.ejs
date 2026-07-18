@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/css/style.css">
+<h1>All Bills</h1>
+
+<a href="/bill/add">
+    Generate Bill
+</a>
+
+<table border="1">
+
+<tr>
+    <th>Tenant</th>
+    <th>Month</th>
+    <th>Total</th>
+    <th>Balance</th>
+    <th>Status</th>
+    <th>Payment</th>
+</tr>
+
+<% bills.forEach(bill => { %>
+
+<tr>
+
+    <td><%= bill.tenant.name %></td>
+
+    <td>
+        <%= bill.month %> /
+        <%= bill.year %>
+    </td>
+
+    <td>
+        ₹<%= bill.totalBill %>
+    </td>
+
+    <td>
+        ₹<%= bill.balance %>
+    </td>
+
+    <td>
+        <%= bill.status %>
+    </td>
+
+    <td>
+    <a href="/payment/<%= bill._id %>">
+        Receive Payment
+    </a>
+</td>
+
+</tr>
+
+<% }) %>
+
+</table>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Tenant</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h2>Payment</h2>
+
+<p>Tenant: <%= bill.tenant.name %></p>
+
+<p>Total Bill: ₹<%= bill.totalBill %></p>
+
+<p>Balance: ₹<%= bill.balance %></p>
+
+<form action="/payment/<%= bill._id %>" method="POST">
+
+    <input
+        type="number"
+        name="amount"
+        placeholder="Amount Paid"
+        required
+    >
+
+    <br><br>
+
+    <select name="paymentMode">
+        <option>Cash</option>
+        <option>UPI</option>
+        <option>Bank Transfer</option>
+    </select>
+
+    <br><br>
+
+    <button>
+        Save Payment
+    </button>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Property</title>
+</head>
+<body>
+<link rel="stylesheet" href="/css/style.css">
+<h1>Add Property</h1>
+
+<form action="/property/add" method="POST">
+
+    <input
+        type="text"
+        name="propertyNumber"
+        placeholder="Property Number (R101 / S01)"
+        required
+    >
+
+    <br><br>
+
+    <select name="type">
+
+        <option value="Room">Room</option>
+
+        <option value="Shop">Shop</option>
+
+    </select>
+
+    <br><br>
+
+    <input
+        type="number"
+        name="rent"
+        placeholder="Monthly Rent"
+        required
+    >
+
+    <br><br>
+
+    <input
+        type="number"
+        name="defaultWaterCharge"
+        placeholder="Water Charge"
+    >
+
+    <br><br>
+
+    <button type="submit">
+        Add Property
+    </button>
+
+</form>
+
+</body>
+</html>
