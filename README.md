@@ -6,6 +6,8 @@ The application allows property owners to manage rental properties and tenants, 
 
 ---
 
+## Website Url --  https://rentify-cyan-one.vercel.app/
+ 
 ## ✨ Features
 
 ### 👤 Authentication
@@ -834,23 +836,4 @@ The project demonstrates practical backend and full-stack web development using 
 
 ---
 
-## ⚠️ Implementation Accuracy
 
-This README describes the implementation found in the current Rentify source.
-
-The uploaded source does **not** verify the following technologies/features:
-
-- React
-- Vite
-- Tailwind CSS
-- MySQL
-- JWT
-- Gemini/AI
-- Axios
-- Dedicated RBAC middleware
-- Dedicated controllers/services architecture
-- Automated testing
-- Docker
-- Vercel/Render/Railway deployment
-
-These should only be added to the README if they are actually implemented in the repository.
